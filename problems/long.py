@@ -7,3 +7,4 @@ for i in range(t):
         print(sentence[0]+str(len(sentence)-2)+sentence[-1])
     else:
         print(sentence)
+        
