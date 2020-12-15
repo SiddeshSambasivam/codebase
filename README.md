@@ -6,7 +6,7 @@
 </p>
 <br />
 
-This repository is collection of solutions, notes and references which I use for revision and practice.
+This repository is collection of my solutions, notes and references which I use for revision and practice.
 
 1. `notes`: Contains course notes and also my personal notes from various articles
 2. `code`: Contains my solutions to various problems in competitions and coding platforms (hackerrank, leetcode, codeforces)
@@ -29,9 +29,9 @@ This repository is collection of solutions, notes and references which I use for
 
 ### **Array**
 
-- [ ] Two Sum - https://leetcode.com/problems/two-sum/
-- [ ] Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-- [ ] Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
+- [x] Two Sum - https://leetcode.com/problems/two-sum/
+- [x] Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+- [x] Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
 - [ ] Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
 - [ ] Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
 - [ ] Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
