@@ -1,5 +1,5 @@
 # Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-# Trick: min cakue in the past should be used to maximize the profit using the present value at every iteration
+# Trick: min cost in the past should be used to maximize the profit using the present value at every iteration
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
