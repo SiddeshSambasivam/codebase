@@ -190,3 +190,5 @@ https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357
 https://jeremyaguilon.me/
 
 https://yangshun.github.io/tech-interview-handbook/study-and-practice/
+
+https://docs.google.com/spreadsheets/d/1KkCeOIBwUFfKrHGGZe_6EJRCIqaM6MJBo0uSIMSD9bs/edit#gid=1116998711
