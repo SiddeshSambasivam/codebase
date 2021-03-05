@@ -71,7 +71,7 @@ Dynamic Programming
 Graph
 
 - [x] Clone Graph - https://leetcode.com/problems/clone-graph/
-- [ ] Course Schedule - https://leetcode.com/problems/course-schedule/
+- [x] Course Schedule - https://leetcode.com/problems/course-schedule/
 - [ ] Pacific Atlantic Water Flow - https://leetcode.com/problems/pacific-atlantic-water-flow/
 - [ ] Number of Islands - https://leetcode.com/problems/number-of-islands/
 - [ ] Longest Consecutive Sequence - https://leetcode.com/problems/longest-consecutive-sequence/
@@ -128,9 +128,9 @@ String
 
 Tree
 
-- [ ] Maximum Depth of Binary Tree - https://leetcode.com/problems/maximum-depth-of-binary-tree/
+- [x] Maximum Depth of Binary Tree - https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Same Tree - https://leetcode.com/problems/same-tree/
-- [ ] Invert/Flip Binary Tree - https://leetcode.com/problems/invert-binary-tree/
+- [x] Invert/Flip Binary Tree - https://leetcode.com/problems/invert-binary-tree/
 - [ ] Binary Tree Maximum Path Sum - https://leetcode.com/problems/binary-tree-maximum-path-sum/
 - [ ] Binary Tree Level Order Traversal - https://leetcode.com/problems/binary-tree-level-order-traversal/
 - [ ] Serialize and Deserialize Binary Tree - https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
