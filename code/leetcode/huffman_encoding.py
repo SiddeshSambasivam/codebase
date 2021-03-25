@@ -1,5 +1,4 @@
-
-'''
+"""
 https://en.wikipedia.org/wiki/Huffman_coding
 
 Given a text, return the Huffman coding table of all the characters (including space if it has).
@@ -31,38 +30,47 @@ abcdef
 # 1 -> right       
 
 
-'''
+"""
 
 from collections import Counter
 import heapq
 
-class TreeNode:
 
-    def __init__(self, char:str, value:int, left:'TreeNode'=None, right:'TreeNode'=None, enc_bit:int=None):
+class TreeNode:
+    def __init__(
+        self,
+        char: str,
+        value: int,
+        left: "TreeNode" = None,
+        right: "TreeNode" = None,
+        enc_bit: int = None,
+    ):
 
         self.char = char
         self.value = value
         self.left = left
         self.right = right
 
-        self.enc_bit = enc_bit # 0/1
+        self.enc_bit = enc_bit  # 0/1
+
+    def __ge__(self, obj):
+        pass
 
 
 class HuffmanEncoding:
-
-    def __init__(self, string:str) -> None:
+    def __init__(self, string: str) -> None:
 
         self.string = string
         self.freq2char = Counter(string)
         self.root = self.create_tree()
 
-        self.table =  dict() # char -> bit_value
+        self.table = dict()  # char -> bit_value
 
     def create_tree(self) -> TreeNode:
-        '''Creates the binary tree for the given nodes of characters'''
+        """Creates the binary tree for the given nodes of characters"""
 
         nodes = list()
-        
+
         for char, freq in self.freq2char.items():
             node = TreeNode(char, freq)
             nodes.append(node)
@@ -77,38 +85,39 @@ class HuffmanEncoding:
             left = sorted_nodes.pop(0)
             right = sorted_nodes.pop(0)
 
-            parent_node = TreeNode(char='', value=(left.value+right.value), left=left, right=right)
+            parent_node = TreeNode(
+                char="", value=(left.value + right.value), left=left, right=right
+            )
             sorted_nodes.append(parent_node)
 
             sorted_nodes = self.sort(sorted_nodes)
-        
+
         return sorted_nodes[0]
-    
-    def traverse_tree(self, root:TreeNode, bit_value:str='') -> None:
-        '''Traverses the tree from a given root and create the encoding table'''
-        
+
+    def traverse_tree(self, root: TreeNode, bit_value: str = "") -> None:
+        """Traverses the tree from a given root and create the encoding table"""
+
         if root.left == None and root.right == None:
             # it is a leaf node
             self.table[root.char] = bit_value
-        
+
         if root.left is not None:
-            self.traverse_tree(root.left, bit_value=bit_value+'0')
+            self.traverse_tree(root.left, bit_value=bit_value + "0")
 
         if root.right is not None:
-            self.traverse_tree(root.right, bit_value=bit_value+'1')
-    
+            self.traverse_tree(root.right, bit_value=bit_value + "1")
+
     def encode(self):
-        '''Encodes the input string and prints the huffman encoding table for all the characters'''
+        """Encodes the input string and prints the huffman encoding table for all the characters"""
         self.traverse_tree(self.root)
         print(self.table)
 
-        
     def sort(self, array):
-        '''Sorts the array based the frequency value of the tree node'''
-        return sorted(array, key= lambda x: x.value) 
-    
+        """Sorts the array based the frequency value of the tree node"""
+        return sorted(array, key=lambda x: x.value)
+
     def show_freq(self):
-        '''Prints the frequency of the characters'''
+        """Prints the frequency of the characters"""
         print(self.freq2char)
 
 
@@ -116,8 +125,3 @@ obj = HuffmanEncoding("this is an example of a huffman tree")
 # obj.show_freq()
 obj.encode()
 # obj.show_freq()
-
-
-
-    
-
