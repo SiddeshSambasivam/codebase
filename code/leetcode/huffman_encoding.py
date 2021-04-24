@@ -53,8 +53,11 @@ class TreeNode:
 
         self.enc_bit = enc_bit  # 0/1
 
-    def __ge__(self, obj):
-        pass
+
+    def __lt__(self, obj) -> bool:
+        # print('Operator Override',self.value, obj.value)
+
+        return self.value < obj.value
 
 
 class HuffmanEncoding:
@@ -62,9 +65,33 @@ class HuffmanEncoding:
 
         self.string = string
         self.freq2char = Counter(string)
-        self.root = self.create_tree()
+        # self.root = self.create_tree()
+        self.root = self.create_tree_heap()
 
         self.table = dict()  # char -> bit_value
+
+
+    def create_tree_heap(self) -> TreeNode:
+        """Creates a binary tree with heap implementation"""
+
+        nodes = list()
+
+        for char, freq in self.freq2char.items():
+            node = TreeNode(char, freq)
+            nodes.append(node)
+
+        heapq.heapify(nodes)
+
+        while len(nodes) >= 2:
+
+            left = heapq.heappop(nodes)
+            right = heapq.heappop(nodes)
+
+            parent_node = TreeNode(char="", value=(left.value+right.value), left=left, right=right)
+
+            heapq.heappush(nodes, parent_node)
+
+        return nodes[0]
 
     def create_tree(self) -> TreeNode:
         """Creates the binary tree for the given nodes of characters"""
