@@ -4,19 +4,19 @@
 
 If you have heard about concurrency but never really understood the clear meaning of it from a programming standpoint, then I recommend you to continue reading till the end.
 
-In literal meaning concurrency means two or more events or circumstances happening at the same time. In python there various names for concurrency such as `threading`, `asynchronous (asyncio)` and `multiprocessing`.
+In literal meaning concurrency means two or more events or circumstances happening at the same time. In python there are various names for concurrency such as `threading`, `asynchronous (asyncio)` and `multiprocessing`.
 
 Before we unwrap the meaning of each of these terms, we need should know what is being computed. When a program is executed, the processor executes a set of sequential instructions one after the other. This set of instructions is called a `thread`.
 
-Sometimes, `thread` is also referred as `process` or `task`.
+Sometimes, a `thread` is also referred as `process` or `task`.
 
-When a CPU running only one thread at a time, it is said to be `single threaded`. This is place at which concurrency plays an important role. Concurrency improves the performance of the process by a lot by running multiple threads simultaneously.
+When a CPU is running only one thread at a time, it is said to be `single threaded`. This is a place at which concurrency plays an important role. Concurrency improves the performance of the process by a lot by running multiple threads simultaneously.
 
 Only `Multiprocessing` actually runs multiple threads at literally the same time.
 
 Whereas `threading` and `asyncio` runs only on a single processor and one at a time. These improve the performance of the process by cleverly taking turns and the key difference between `threading` and `asyncio` is the way they take turns.
 
-In `threading`, the OS actually knows about each thread and interrpts it at any time to start running a different thread. This is called **pre-emptive multitasking** since the OS can pre-empt the thread to make the switch.
+In `threading`, the OS actually knows about each thread and interrupts it at any time to start running a different thread. This is called **pre-emptive multitasking** since the OS can pre-empt the thread to make the switch.
 
 On the other hand, `asyncio` uses **cooperative multitasking**. The tasks must cooperate by announcing when to switch with additional code unlike pre-emptive multitasking.
 
@@ -139,10 +139,10 @@ When `threading` is added the entire structure remains almost the same with very
    Things-To-Note:
 </h3>
 
-- `ThreadPoolExecutor` = `Thread` + `Pool` + `Executor`
-- We already know what `thread` is, the `pool` is an object which creates a collection of `threads`, each of which can run concurrently.
-- Finally, `executor` is the part that controls the execution flow of the `threads`.
-- `ThreadPoolExecutor` has a very handy method called `map()` which takes in the function and the list of parameters and automatically runs them concurrently.
+-   `ThreadPoolExecutor` = `Thread` + `Pool` + `Executor`
+-   We already know what `thread` is, the `pool` is an object which creates a collection of `threads`, each of which can run concurrently.
+-   Finally, `executor` is the part that controls the execution flow of the `threads`.
+-   `ThreadPoolExecutor` has a very handy method called `map()` which takes in the function and the list of parameters and automatically runs them concurrently.
 
 <h3 style="font-weight:bold;font-size:25px;color:darkred">Caution !!</h3>
 
@@ -154,7 +154,7 @@ Unfortunately, `requests.Session()` is not thread-safe.
 
 1. One of the way we could solve this problem is using thread-safe data structures like `Queue` from Python's `queue` module.
 
-   These objects use loe-level primitives like `threading.Lock` to ensure that only one thread can access a block of code or a bit of memory at the same time.
+    These objects use loe-level primitives like `threading.Lock` to ensure that only one thread can access a block of code or a bit of memory at the same time.
 
 2. Thread Local Storage. `threading.local()` creates an object that looks like a global but is specific to each individual thread.
 
