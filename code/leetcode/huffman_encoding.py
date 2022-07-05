@@ -34,7 +34,8 @@ abcdef
 
 from collections import Counter
 import heapq
-
+from typing import Type
+from unittest import result
 
 class TreeNode:
     def __init__(
@@ -59,14 +60,17 @@ class TreeNode:
 
         return self.value < obj.value
 
+    def __str__(self) -> str:
+        return f"TreeNode<Char={self.char} Value={self.value}>"
+
 
 class HuffmanEncoding:
     def __init__(self, string: str) -> None:
 
         self.string = string
         self.freq2char = Counter(string)
-        # self.root = self.create_tree()
-        self.root = self.create_tree_heap()
+        self.root = self.create_tree()
+        # self.root = self.create_tree_heap()
 
         self.table = dict()  # char -> bit_value
 
@@ -136,8 +140,14 @@ class HuffmanEncoding:
 
     def encode(self):
         """Encodes the input string and prints the huffman encoding table for all the characters"""
-        self.traverse_tree(self.root)
-        print(self.table)
+        self.traverse_tree(self.root)        
+
+    def __str__(self) -> str:
+        result = ["Huffman Encoding\n============="]
+        for k, v in self.table.items():
+            result.append(f"{k} = {v}")
+        
+        return "\n".join(result)
 
     def sort(self, array):
         """Sorts the array based the frequency value of the tree node"""
@@ -145,10 +155,15 @@ class HuffmanEncoding:
 
     def show_freq(self):
         """Prints the frequency of the characters"""
-        print(self.freq2char)
-
+        print("Frequency table")
+        print("===============")
+        for k, v in self.freq2char.items():
+            print(f"{k} = {v}")
+        print()
 
 obj = HuffmanEncoding("this is an example of a huffman tree")
-# obj.show_freq()
 obj.encode()
+
+obj.show_freq()
+print(obj)
 # obj.show_freq()
